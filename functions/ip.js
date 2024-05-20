@@ -1,6 +1,6 @@
 export async function onRequest(context) {
     const { request, env } = context;
-    const ip = request.headers.get("x-forwarded-for") || request.headers.get("clientIP")
+    const ip = request.headers.get("x-forwarded-for") || request.headers.get("clientIP") || "1.1.1.1"
     const asOrganization = request.cf.asOrganization || ""
     return Response.json({
         "ip": ip,
