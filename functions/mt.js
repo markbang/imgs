@@ -4,7 +4,7 @@ export async function onRequestPost(context) {
     const clientIP = request.headers.get("x-forwarded-for") || request.headers.get("clientIP");
     const Referer = request.headers.get('Referer') || "Referer";
     const formData = await request.formData()
-    const res_img = await fetch('https://kf.dianping.com/api/file/singleImage', {
+    const res_img = await fetch('https://kf.dianping.com/api/file/burstUploadFile?pragmaEnv=gray-release-service-u1', {
         method: request.method,
         headers: {
             "Referer": "https://h5.dianping.com/",
